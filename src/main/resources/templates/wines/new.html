@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>와인 등록</title>
+</head>
+<body>
+<h2>와인 등록</h2>
+<form th:action="@{/wines}" method="post" th:object="${wineDTO}">
+  <input type="text" th:field="*{wineName}" placeholder="와인 이름"/>
+  <input type="text" th:field="*{wineType}" placeholder="와인 종류 (예: 레드)"/>
+  <input type="text" th:field="*{country}" placeholder="원산지"/>
+  <input type="number" th:field="*{winePrice}" placeholder="가격"/>
+  <button type="submit">등록</button>
+</form>
+</body>
+</html>
