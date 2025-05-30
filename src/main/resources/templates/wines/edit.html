@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>와인 수정</title>
+</head>
+<body>
+<h1>와인 수정</h1>
+
+<form th:action="@{|/wines/${wine.wineId}/edit|}" th:object="${wine}" method="post">
+  <label>와인이름: <input type="text" th:field="*{wineName}"/></label><br>
+  <label>와인타입: <input type="text" th:field="*{wineType}"/></label><br>
+  <label>원산지: <input type="text" th:field="*{country}"/></label><br>
+  <label>가격: <input type="number" th:field="*{winePrice}"/>원</label><br>
+  <button type="submit">저장</button>
+</form>
+
+<a th:href="@{/wines}">목록으로</a>
+</body>
+</html>

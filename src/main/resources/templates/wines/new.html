@@ -6,11 +6,12 @@
 <body>
 <h2>와인 등록</h2>
 <form th:action="@{/wines}" method="post" th:object="${wineDTO}">
-  <input type="text" th:field="*{wineName}" placeholder="와인 이름"/>
-  <input type="text" th:field="*{wineType}" placeholder="와인 종류 (예: 레드)"/>
-  <input type="text" th:field="*{country}" placeholder="원산지"/>
-  <input type="number" th:field="*{winePrice}" placeholder="가격"/>
+  <label>와인이름: <input type="text" th:field="*{wineName}" placeholder="와인 이름"/></label><br>
+  <label>와인종류: <input type="text" th:field="*{wineType}" placeholder="와인 종류 (예: 레드)"/></label><br>
+  <label>원산지: <input type="text" th:field="*{country}" placeholder="원산지"/></label><br>
+  <label>가격: <input type="number" th:field="*{winePrice}" placeholder="가격"/>원</label><br>
   <button type="submit">등록</button>
 </form>
+<a th:href="@{/wines}">목록으로</a>
 </body>
 </html>
